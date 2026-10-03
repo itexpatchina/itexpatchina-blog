@@ -16,6 +16,9 @@ theme = 'PaperMod'
   ShowCodeCopyButtons = true
   ShowToc = true
 
+  # Footer / Copyright Link (Option B for AdSense Privacy Policy compliance)
+  copyright = "© 2026 [IT Expat China](https://www.itexpatchina.com) · [Privacy Policy](/privacy/) · [About](/about/)"
+
   # Clean homepage layout with bilingual welcome banner
   [params.homeInfoParams]
     Title = "👋 Welcome to IT Expat China | 欢迎来到 IT Expat China"
@@ -25,12 +28,6 @@ theme = 'PaperMod'
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/itexpatchina"
-
-  # Custom Header for Google AdSense
-  customHeader = '''
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
-          crossorigin="anonymous"></script>
-  '''
 
 [menu]
   [[menu.main]]
