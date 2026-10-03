@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '0 0 * * *' # Automatically runs daily at 00:00 UTC
   workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+  repository_dispatch: # Listens for dispatch triggers from other repos
+    types: [repo_updated]
 
 jobs:
   sync-and-commit:
