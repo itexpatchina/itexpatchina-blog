@@ -6,8 +6,27 @@ theme = 'PaperMod'
 [params]
   description = "Tech Knowledge Share From Behind the GFW"
   defaultTheme = "auto"
+  showThemeToggle = true
 
-  # Inject custom header script for AdSense
+  # Header & Footer Navigation
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+  # Clean homepage layout with welcome banner
+  [params.homeInfoParams]
+    Title = "👋 Welcome to IT Expat China"
+    Content = "Sharing practical guides on homelabs, VPS networking, proxy setups, and tech workarounds from behind the GFW."
+
+  # Social links displayed on homepage
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/itexpatchina"
+
+  # Custom Header for Google AdSense
   customHeader = '''
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
           crossorigin="anonymous"></script>
@@ -20,7 +39,12 @@ theme = 'PaperMod'
     url = "/posts/"
     weight = 10
   [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 20
+    weight = 30
