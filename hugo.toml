@@ -16,8 +16,8 @@ theme = 'PaperMod'
   ShowCodeCopyButtons = true
   ShowToc = true
 
-  # Footer / Copyright Link (Option B for AdSense Privacy Policy compliance)
-  copyright = "© 2026 [IT Expat China](https://www.itexpatchina.com) · [Privacy Policy](/privacy/) · [About](/about/)"
+  # Custom Footer HTML for PaperMod
+  copyright = '© 2026 <a href="https://www.itexpatchina.com">IT Expat China</a> · <a href="/privacy/">Privacy Policy</a> · <a href="/about/">About</a>'
 
   # Clean homepage layout with bilingual welcome banner
   [params.homeInfoParams]
