@@ -38,11 +38,19 @@ theme = 'PaperMod'
     name = "Posts"
     url = "/posts/"
     weight = 10
+
+  [[menu.main]]
+    identifier = "omnitools"
+    name = "OmniTools ↗"
+    url = "https://omni.itexpatchina.com/"
+    weight = 15
+
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
     weight = 20
+
   [[menu.main]]
     identifier = "about"
     name = "About"
