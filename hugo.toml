@@ -49,6 +49,12 @@ theme = 'PaperMod'
     weight = 20
 
   [[menu.main]]
+    identifier = "privacy"
+    name = "Privacy"
+    url = "/privacy/"
+    weight = 25
+
+  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
