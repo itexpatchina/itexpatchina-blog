@@ -1,0 +1,26 @@
+baseURL = 'https://www.itexpatchina.com/'
+languageCode = 'en-us'
+title = 'IT Expat China'
+theme = 'PaperMod'
+
+[params]
+  description = "Tech Knowledge Share From Behind the GFW"
+  defaultTheme = "auto"
+
+  # Inject custom header script for AdSense
+  customHeader = '''
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
+          crossorigin="anonymous"></script>
+  '''
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 20
