@@ -1,0 +1,109 @@
+/* ==========================================================================
+   IT Expat China - PaperMod Custom CSS Overrides
+   Path in project: assets/css/extended/custom.css
+   ========================================================================== */
+
+/* 1. Global Typography & Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+}
+
+/* 2. Enhanced Post Cards on Homepage & Archive */
+.post-entry {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.post-entry:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.post-title {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+/* 3. Inline Code & Code Block Polishing */
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.88em;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    background-color: var(--code-bg);
+}
+
+.highlight pre {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+/* 4. Technical Tables Styling */
+.post-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.post-content th,
+.post-content td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    text-align: left;
+}
+
+.post-content th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+.post-content tr:last-child td {
+    border-bottom: none;
+}
+
+.post-content th:last-child,
+.post-content td:last-child {
+    border-right: none;
+}
+
+/* 5. Blockquotes & Callouts */
+.post-content blockquote {
+    border-left: 4px solid var(--primary);
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.25rem;
+    background: var(--code-bg);
+    border-radius: 0 8px 8px 0;
+    color: var(--secondary);
+}
+
+/* 6. Tag Chips Styling */
+.post-tags a {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    margin-right: 6px;
+    transition: all 0.2s ease;
+}
+
+.post-tags a:hover {
+    background: var(--primary);
+    color: var(--theme);
+}
