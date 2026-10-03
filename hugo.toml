@@ -4,8 +4,8 @@ title = 'IT Expat China'
 theme = 'PaperMod'
 
 [params]
-  description = "Tech Knowledge Share From Behind the GFW"
-  defaultTheme = "auto"
+  description = "Tech Knowledge Share From Behind the GFW | 翻墙与 Homelab 技术分享"
+  defaultTheme = "auto" # Options: "dark", "light", "auto"
   showThemeToggle = true
 
   # Header & Footer Navigation
@@ -16,10 +16,10 @@ theme = 'PaperMod'
   ShowCodeCopyButtons = true
   ShowToc = true
 
-  # Clean homepage layout with welcome banner
+  # Clean homepage layout with bilingual welcome banner
   [params.homeInfoParams]
-    Title = "👋 Welcome to IT Expat China"
-    Content = "Sharing practical guides on homelabs, VPS networking, proxy setups, and tech workarounds from behind the GFW."
+    Title = "👋 Welcome to IT Expat China | 欢迎来到 IT Expat China"
+    Content = "Sharing practical guides on homelabs, VPS networking, proxy setups, and tech workarounds from behind the GFW.<br><br>分享关于家庭实验室、VPS 网络、代理框架与 GFW 实用技术的实战指南。"
 
   # Social links displayed on homepage
   [[params.socialIcons]]
@@ -41,7 +41,7 @@ theme = 'PaperMod'
 
   [[menu.main]]
     identifier = "omnitools"
-    name = "OmniTools ↗"
+    name = "OmniTools"
     url = "https://omni.itexpatchina.com/"
     weight = 15
 
