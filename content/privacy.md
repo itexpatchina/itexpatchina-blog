@@ -111,6 +111,6 @@ IT Expat China does not knowingly collect any Personal Identifiable Information 
 
 ## 9. Contact Us / 联系我们
 
-If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at `contact@itexpatchina.com` or via our GitHub repository.
+If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at `itexpatchina@gmail.com` or via our GitHub repository.
 
-> 如果您对本隐私政策有任何疑问或需要更多信息，请通过 `contact@itexpatchina.com` 与我们联系。
+> 如果您对本隐私政策有任何疑问或需要更多信息，请通过 `itexpatchina@gmail.com` 与我们联系。
