@@ -1,5 +1,5 @@
 /* ==========================================================================
-   IT Expat China - PaperMod Matrix Banner & Tile Grid Redesign (custom-v4.css)
+   IT Expat China - PaperMod Matrix Banner & Green Neon Tile Grid Redesign (custom-v5.css)
    Path in project: assets/css/extended/custom.css
    ========================================================================== */
 
@@ -47,10 +47,10 @@ main.main {
     margin-bottom: 0.25rem !important;
     padding: 1.5rem 1.75rem;
     border-radius: 12px;
-    border: 1px solid rgba(0, 255, 136, 0.25);
+    border: 1px solid rgba(0, 255, 136, 0.3);
     background: linear-gradient(135deg, rgba(8, 15, 10, 0.82), rgba(5, 10, 8, 0.90)), 
                 url('/images/matrix-bg.png') center/cover no-repeat;
-    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.08), inset 0 0 15px rgba(0, 255, 136, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.10), inset 0 0 15px rgba(0, 255, 136, 0.05);
     position: relative;
     overflow: hidden;
 }
@@ -111,7 +111,7 @@ main.main {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* Post Cards Tile Styling */
+/* Green Matrix Neon Styling for Post Entry Tile Cards */
 .post-entry {
     display: flex;
     flex-direction: column;
@@ -120,8 +120,9 @@ main.main {
     margin-bottom: 0 !important;
     padding: 1.4rem;
     border-radius: 12px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(0, 255, 136, 0.22);
     background: var(--entry);
+    box-shadow: 0 4px 16px rgba(0, 255, 136, 0.04), inset 0 0 12px rgba(0, 255, 136, 0.03);
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -130,6 +131,7 @@ main.main {
                 border-color 0.25s ease;
 }
 
+/* Green Top Accent Bar for Each Card */
 .post-entry::before {
     content: "";
     position: absolute;
@@ -137,15 +139,16 @@ main.main {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--primary);
-    opacity: 0;
+    background: #00ff88;
+    opacity: 0.4;
     transition: opacity 0.25s ease;
 }
 
+/* Glowing Neon Hover Effect on Post Cards */
 .post-entry:hover {
     transform: translateY(-4px);
-    border-color: var(--primary);
-    box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.12);
+    border-color: #00ff88;
+    box-shadow: 0 12px 28px -6px rgba(0, 255, 136, 0.22), 0 0 15px rgba(0, 255, 136, 0.12);
 }
 
 .post-entry:hover::before {
@@ -158,6 +161,11 @@ main.main {
     line-height: 1.35;
     margin-bottom: 0.5rem;
     color: var(--primary);
+    transition: color 0.2s ease;
+}
+
+.post-entry:hover .post-title {
+    color: #00ff88;
 }
 
 .post-description {
@@ -180,7 +188,7 @@ main.main {
     align-items: center;
     gap: 0.5rem;
     padding-top: 0.65rem;
-    border-top: 1px dashed var(--border);
+    border-top: 1px dashed rgba(0, 255, 136, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -239,7 +247,7 @@ code {
 }
 
 .post-content blockquote {
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid #00ff88;
     margin: 1.5rem 0;
     padding: 0.75rem 1.25rem;
     background: var(--code-bg);
