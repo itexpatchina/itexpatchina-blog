@@ -1,14 +1,12 @@
 /* ==========================================================================
-   IT Expat China - PaperMod Tile / Grid Homepage Redesign (custom-v3.css)
+   IT Expat China - PaperMod Matrix Banner & Tile Grid Redesign (custom-v4.css)
    Path in project: assets/css/extended/custom.css
    ========================================================================== */
 
-/* 1. Expand Layout Width for Multi-Column Tiles */
 :root {
     --main-width: 920px;
 }
 
-/* 2. Global Typography & Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
@@ -19,15 +17,13 @@ body {
     letter-spacing: 0.01em;
 }
 
-/* 3. CSS Grid Layout for Homepage & Article Lists */
 main.main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem 1.5rem; /* Reduced vertical row-gap from 1.5rem to 1rem for a tighter layout */
+    gap: 1.25rem 1.5rem;
     align-items: stretch;
 }
 
-/* 4. Full-Width Spanning for Non-Card Elements */
 .first-entry,
 .home-info,
 .page-footer,
@@ -41,15 +37,22 @@ main.main {
     grid-column: 1 / -1;
 }
 
-/* 5. Inline GitHub Cat Icon Alignment & Reduced Gap for Welcome Banner */
+/* Matrix Movie Themed Banner Background for Welcome Section */
 .home-info,
 .first-entry.home-info {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.4rem 0.6rem;
-    margin-bottom: -0.25rem !important; /* Eliminates excess gap between banner and post tiles */
-    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem !important;
+    padding: 1.5rem 1.75rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    background: linear-gradient(135deg, rgba(8, 15, 10, 0.82), rgba(5, 10, 8, 0.90)), 
+                url('/images/matrix-bg.png') center/cover no-repeat;
+    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.08), inset 0 0 15px rgba(0, 255, 136, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
 .home-info .entry-header {
@@ -63,9 +66,11 @@ main.main {
     margin: 0;
     font-size: 1.55rem;
     line-height: 1.3;
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+    font-weight: 700;
 }
 
-/* Moves .entry-footer (containing GitHub icon) onto the same header line right after "China" */
 .home-info .entry-footer {
     order: 2;
     margin: 0;
@@ -85,25 +90,28 @@ main.main {
     display: inline-flex;
     align-items: center;
     padding: 2px;
+    color: #00ff88;
 }
 
 .home-info .social-icons a svg {
     width: 24px;
     height: 24px;
     vertical-align: middle;
+    fill: currentColor;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 136, 0.5));
 }
 
-/* Forces the subtitle / intro text down to the second line beneath title + icon */
 .home-info .entry-content {
     order: 3;
     width: 100%;
-    margin-top: 0.25rem;
+    margin-top: 0.4rem;
     font-size: 0.98rem;
     line-height: 1.6;
-    color: var(--secondary);
+    color: #d1fae5;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* 6. Modern Tile Card Styling (.post-entry) */
+/* Post Cards Tile Styling */
 .post-entry {
     display: flex;
     flex-direction: column;
@@ -122,7 +130,6 @@ main.main {
                 border-color 0.25s ease;
 }
 
-/* Hover Accent Top Line & Elevation Effect */
 .post-entry::before {
     content: "";
     position: absolute;
@@ -145,7 +152,6 @@ main.main {
     opacity: 1;
 }
 
-/* Post Entry Card Content & Typography */
 .post-title {
     font-size: 1.2rem;
     font-weight: 700;
@@ -177,7 +183,6 @@ main.main {
     border-top: 1px dashed var(--border);
 }
 
-/* 7. Mobile Responsiveness (Single Column Stack) */
 @media (max-width: 768px) {
     :root {
         --main-width: 100%;
@@ -191,9 +196,12 @@ main.main {
     .post-entry {
         padding: 1.2rem;
     }
+
+    .home-info {
+        padding: 1.25rem;
+    }
 }
 
-/* 8. Code Blocks, Tables & Callouts Polishing */
 code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 0.88em;
