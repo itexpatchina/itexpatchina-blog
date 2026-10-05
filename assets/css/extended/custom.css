@@ -1,40 +1,143 @@
 /* ==========================================================================
-   IT Expat China - PaperMod Custom CSS Overrides
+   IT Expat China - PaperMod Tile / Grid Homepage Redesign (custom-v2.css)
    Path in project: assets/css/extended/custom.css
    ========================================================================== */
 
-/* 1. Global Typography & Smooth Scrolling */
+/* 1. Expand Layout Width for Multi-Column Tiles */
+:root {
+    --main-width: 920px; /* Expands PaperMod container to fit multi-column tile layout */
+}
+
+/* 2. Global Typography & Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.75;
+    line-height: 1.7;
     letter-spacing: 0.01em;
 }
 
-/* 2. Enhanced Post Cards on Homepage & Archive */
+/* 3. CSS Grid Layout for Homepage & Article Lists */
+main.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-column tile grid on desktop */
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* 4. Full-Width Spanning for Non-Card Elements */
+/* Ensures Welcome Banner, Headers, Pagination & Page Footers span across all columns */
+.first-entry,
+.home-info,
+.page-footer,
+.pagination,
+.post-header,
+.post-footer,
+.archive-year,
+.archive-month,
+.terms-tags,
+.not-found {
+    grid-column: 1 / -1;
+}
+
+/* Special spacing for Homepage Welcome Banner */
+.home-info {
+    margin-bottom: 0.5rem;
+}
+
+/* 5. Modern Tile Card Styling (.post-entry) */
 .post-entry {
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 0 !important; /* Managed by grid gap */
+    padding: 1.5rem;
+    border-radius: 12px;
     border: 1px solid var(--border);
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-    margin-bottom: 1.25rem;
-    padding: 1.25rem 1.5rem;
+    background: var(--entry);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s ease, 
+                border-color 0.25s ease;
+}
+
+/* Hover Accent Top Line & Elevation Effect */
+.post-entry::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary);
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
 .post-entry:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     border-color: var(--primary);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.12);
 }
 
+.post-entry:hover::before {
+    opacity: 1;
+}
+
+/* Post Entry Card Content & Typography */
 .post-title {
-    font-weight: 600;
-    margin-bottom: 0.4rem;
+    font-size: 1.22rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.6rem;
+    color: var(--primary);
 }
 
-/* 3. Inline Code & Code Block Polishing */
+.post-description {
+    font-size: 0.92rem;
+    color: var(--secondary);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Aligns post metadata evenly at bottom of every card */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Uniform 3-line description clamping */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-meta {
+    font-size: 0.82rem;
+    color: var(--secondary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border);
+}
+
+/* 6. Mobile Responsiveness (Single Column Stack) */
+@media (max-width: 768px) {
+    :root {
+        --main-width: 100%;
+    }
+    
+    main.main {
+        grid-template-columns: 1fr; /* 1-column layout on mobile devices */
+        gap: 1.25rem;
+    }
+    
+    .post-entry {
+        padding: 1.25rem;
+    }
+}
+
+/* 7. Code Blocks, Tables & Callouts Polishing */
 code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 0.88em;
@@ -48,7 +151,6 @@ code {
     border: 1px solid var(--border);
 }
 
-/* 4. Technical Tables Styling */
 .post-content table {
     width: 100%;
     border-collapse: separate;
@@ -72,16 +174,6 @@ code {
     font-weight: 600;
 }
 
-.post-content tr:last-child td {
-    border-bottom: none;
-}
-
-.post-content th:last-child,
-.post-content td:last-child {
-    border-right: none;
-}
-
-/* 5. Blockquotes & Callouts */
 .post-content blockquote {
     border-left: 4px solid var(--primary);
     margin: 1.5rem 0;
@@ -89,21 +181,4 @@ code {
     background: var(--code-bg);
     border-radius: 0 8px 8px 0;
     color: var(--secondary);
-}
-
-/* 6. Tag Chips Styling */
-.post-tags a {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 12px;
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    font-size: 0.8rem;
-    margin-right: 6px;
-    transition: all 0.2s ease;
-}
-
-.post-tags a:hover {
-    background: var(--primary);
-    color: var(--theme);
 }
