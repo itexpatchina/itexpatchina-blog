@@ -2,7 +2,7 @@ name: Sync Public Repos to Blog Posts
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Automatically runs daily at 00:00 UTC
+    - cron: '0 */6 * * *' # Automatically runs every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
   workflow_dispatch: # Allows manual trigger from GitHub UI anytime
   repository_dispatch: # Listens for dispatch triggers from other repos
     types: [repo_updated]
